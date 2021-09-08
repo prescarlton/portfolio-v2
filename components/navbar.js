@@ -21,7 +21,7 @@ export const Navbar = () => {
                         Home
                     </li>
                 </Link>
-                <Link href='#about'>
+                <Link href='/projects'>
                     <li className='mr-16 hover:text-blue-500 cursor-pointer'>
                         Projects
                     </li>
@@ -42,8 +42,8 @@ export const Navbar = () => {
             </div>
             <div className={`${showNav ? 'flex' : 'hidden'} flex-1 flex-col absolute h-screen bg-white items-end top-0 bottom-0 right-0 left-0 text-right p-6`}>
                 <div className='nav my-24'>
-                    <h1 className='text-3xl my-3'>home</h1>
-                    <h1 className='text-3xl my-3'>projects</h1>
+                    <h1 className='text-3xl my-3'><Link href='/'>home</Link></h1>
+                    <h1 className='text-3xl my-3'><Link href='/projects'>projects</Link></h1>
                     <h1 className='text-3xl my-3'>contact</h1>
                 </div>
                 <div>
