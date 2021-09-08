@@ -9,7 +9,7 @@ export const Navbar = () => {
     }
 
     return (
-        <div className='flex justify-between p-6 md:px-36 md:py-10 w-100 md:flex-row items-start'>
+        <div className='flex justify-between p-6 md:px-36 md:pt-10 md:pb-0 w-100 md:flex-row items-start'>
             <Link href='/'>
                 <h1 className='text-2xl font-semibold text-blue-500 md:text-black hover:text-blue-500 cursor-pointer md:flex-none'>
                     Preston
