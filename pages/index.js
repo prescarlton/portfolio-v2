@@ -5,17 +5,17 @@ export default function Home() {
     <div className="h-screen flex flex-col">
       <Navbar />
       <div className='lines absolute top-64'>
-        <div className='line-1 flex my-2'>
-          <div className='shape-1 h-5 w-8 bg-gray-100 rounded-r-xl mr-2'></div>
-          <div className='shape-1 h-5 w-16 bg-gray-100 rounded-xl mr-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-5 w-8 bg-gray-100 rounded-r-xl mr-2'></div>
+          <div className='line h-5 w-16 bg-gray-100 rounded-xl mr-2'></div>
         </div>
-        <div className='line-2 flex my-2'>
-          <div className='shape-1 h-5 w-10 bg-gray-100 rounded-r-xl mr-2'></div>
-          <div className='shape-1 h-5 w-24 bg-gray-100 rounded-xl mr-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-5 w-10 bg-gray-100 rounded-r-xl mr-2'></div>
+          <div className='line h-5 w-24 bg-gray-100 rounded-xl mr-2'></div>
         </div>
-        <div className='line-3 flex my-2'>
-          <div className='shape-1 h-5 w-6 bg-gray-100 rounded-r-xl mr-2'></div>
-          <div className='shape-1 h-5 w-24 bg-gray-100 rounded-xl mr-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-5 w-6 bg-gray-100 rounded-r-xl mr-2'></div>
+          <div className='line h-5 w-24 bg-gray-100 rounded-xl mr-2'></div>
         </div>
       </div>
 
@@ -25,17 +25,17 @@ export default function Home() {
         <button className='cursor-pointer bg-blue-500 py-2 px-6 rounded-md text-white hover:bg-blue-600 transition my-1'><Link href='/projects'>PROJECTS</Link></button>
       </div>
       <div className='hidden md:absolute md:bottom-32 md:right-0 md:flex md:flex-col md:items-end'>
-        <div className='line-1 flex my-2'>
-          <div className='shape-1 h-7 w-20 bg-gray-100 rounded-xl ml-2'></div>
-          <div className='shape-1 h-7 w-48 bg-gray-100 rounded-l-xl ml-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-7 w-20 bg-gray-100 rounded-xl ml-2'></div>
+          <div className='line h-7 w-48 bg-gray-100 rounded-l-xl ml-2'></div>
         </div>
-        <div className='line-2 flex my-2'>
-          <div className='shape-1 h-7 w-36 bg-gray-100 rounded-xl ml-2'></div>
-          <div className='shape-1 h-7 w-10 bg-gray-100 rounded-l-xl ml-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-7 w-36 bg-gray-100 rounded-xl ml-2'></div>
+          <div className='line h-7 w-10 bg-gray-100 rounded-l-xl ml-2'></div>
         </div>
-        <div className='line-3 flex my-2'>
-          <div className='shape-1 h-7 w-48 bg-gray-100 rounded-xl ml-2'></div>
-          <div className='shape-1 h-7 w-36 bg-gray-100 rounded-l-xl ml-2'></div>
+        <div className='flex my-2'>
+          <div className='line h-7 w-48 bg-gray-100 rounded-xl ml-2'></div>
+          <div className='line h-7 w-36 bg-gray-100 rounded-l-xl ml-2'></div>
         </div>
       </div>
     </div>

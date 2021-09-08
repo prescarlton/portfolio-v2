@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { Instagram, Linkedin, Menu, X } from 'react-feather';
 
 export const Navbar = () => {
     const [showNav, setShowNav] = useState(false);
@@ -21,16 +22,17 @@ export const Navbar = () => {
                         Home
                     </li>
                 </Link>
+                <Link href='/about'>
+                    <li className='mr-16 hover:text-blue-500 cursor-pointer '>
+                        About
+                    </li>
+                </Link>
                 <Link href='/projects'>
                     <li className='mr-16 hover:text-blue-500 cursor-pointer'>
                         Projects
                     </li>
                 </Link>
-                <Link href='#contact'>
-                    <li className='mr-16 hover:text-blue-500 cursor-pointer '>
-                        Contact
-                    </li>
-                </Link>
+
                 <Link href='#resume'>
                     <li className='cursor-pointer bg-blue-500 py-2 px-6 rounded-md text-white hover:bg-blue-600 transition'>
                         Resume
@@ -38,18 +40,20 @@ export const Navbar = () => {
                 </Link>
             </ul>
             <div className='md:hidden absolute top-0 right-0 p-6 z-10' onClick={() => toggleNav()}>
-                {showNav ? 'close' : 'menu'}
+                {showNav ? (<X />) : <Menu />}
             </div>
             <div className={`${showNav ? 'flex' : 'hidden'} flex-1 flex-col absolute h-screen bg-white items-end top-0 bottom-0 right-0 left-0 text-right p-6`}>
                 <div className='nav my-24'>
                     <h1 className='text-3xl my-3'><Link href='/'>home</Link></h1>
                     <h1 className='text-3xl my-3'><Link href='/projects'>projects</Link></h1>
-                    <h1 className='text-3xl my-3'>contact</h1>
+                    <h1 className='text-3xl my-3'><Link href='/about'>about</Link></h1>
                 </div>
                 <div>
                     <h1 className='text-3xl my-3'>social media</h1>
-                    <h2 className='text-xl my-1'>instagram</h2>
-                    <h2 className='text-xl my-1'>linkedin</h2>
+                    <div className='socials flex justify-end'>
+                        <Instagram className='ml-4'/>
+                        <Linkedin className='ml-4'/>
+                    </div>
                 </div>
             </div>
         </div>
