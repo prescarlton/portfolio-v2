@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="h-screen flex flex-col">
-      <Navbar />
+      <Navbar active='home'/>
       <div className='lines absolute top-64'>
         <div className='flex my-2'>
           <div className='line h-5 w-8 bg-gray-100 rounded-r-xl mr-2'></div>

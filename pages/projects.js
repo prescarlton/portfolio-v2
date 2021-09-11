@@ -1,10 +1,6 @@
 import { Navbar } from "../components/navbar";
-import Image from 'next/image';
-import Link from 'next/link'
 import { useState } from 'react';
-
-import leftIcon from '../public/img/left.svg';
-import rightIcon from '../public/img/right.svg';
+import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from "react-feather";
 
 // temp until api is setup
@@ -16,7 +12,7 @@ let projects = [
         I can never settle on a layout that I actually like, but I think what I've landed on 
         this iteration is pretty unique. Whereas the majority of people go for a grid 
         layout for their projects, I chose to have a full-page 
-        slideshow of a few spotlighted projects, and an archive of all my public GitHub repos. Still working on the projects to add to this page, but expect updates soon!`
+        slideshow of a few spotlighted projects, and an archive of all my public GitHub repos. Still working on the highlighted projects, but click below to see the archive!`
     },
     // {
     //     title: 'Bevvy',
@@ -46,11 +42,11 @@ const getProjectContent = (pageNum) => {
     return pageNum == 0 ? (
         <div className='project-content flex-1 flex flex-col justify-center items-start'>
             <div className='header-container mb-3'>
-                <h1 className='text-4xl mb-1'>{projects[pageNum].title}</h1>
+                <h1 className='text-4xl mb-1 font-black'>{projects[pageNum].title}</h1>
                 <div className='header-underline h-2 w-10 rounded-lg bg-blue-500'></div>
             </div>
             <p className='py-2 mb-3 text-lg'>{projects[pageNum].description}</p>
-            {/* <button className='cursor-pointer bg-blue-500 py-2 px-4 rounded-md text-white hover:bg-blue-600 transition'><Link href='/project-archive'>VIEW ALL PROJECTS</Link></button> */}
+            <button className='cursor-pointer bg-blue-500 py-2 px-4 rounded-md text-white hover:bg-blue-600 transition'><Link href='/project-archive'>VIEW ALL PROJECTS</Link></button>
         </div>
     ) : (
         <div className='project-content flex-1 flex flex-col justify-end mb-3'>
@@ -84,13 +80,13 @@ export default function Projects() {
 
     return (
         <div className='h-screen flex flex-col'>
-            <Navbar />
+            <Navbar active='projects' />
 
             <div className='flex flex-col flex-1 p-6 pb-12 md:px-36'>
                 <div className='project-card min-h-full rounded-lg flex flex-col'>
                     {getProjectContent(pageNumber)}
                     <div className='projects-controls flex justify-between items-center'>
-                        <div className={`${pageNumber < 1 && 'invisible'}`} onClick={() => prevProject()}><ChevronLeft className='text-blue-500 h-8 w-8'/></div>
+                        <div className={`${pageNumber < 1 && 'invisible'}`} onClick={() => prevProject()}><ChevronLeft className='text-blue-500 h-8 w-8' /></div>
                         <div className='page-dots flex justify-evenly'>
                             {projects.length > 1 && projects.map((proj, i) => {
                                 return (
@@ -98,7 +94,7 @@ export default function Projects() {
                                 )
                             })}
                         </div>
-                        <div className={`${pageNumber == projects.length - 1 && 'invisible'}`} onClick={() => nextProject()}><ChevronRight className='text-blue-500 h-8 w-8'/></div>
+                        <div className={`${pageNumber == projects.length - 1 && 'invisible'}`} onClick={() => nextProject()}><ChevronRight className='text-blue-500 h-8 w-8' /></div>
                     </div>
                 </div>
             </div>
