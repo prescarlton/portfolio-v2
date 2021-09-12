@@ -7,8 +7,7 @@ import { ArrowLeft } from "react-feather";
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 export default function ProjectArchive() {
-    // const { data, error } = useSWR('https://api.github.com/users/prescarlton/repos', fetcher);
-    const data = { message: 'poop' }
+    const { data, error } = useSWR('https://api.github.com/users/prescarlton/repos', fetcher);
     if (!data) return <h1>Loading...</h1>;
     console.log(data)
     return (
