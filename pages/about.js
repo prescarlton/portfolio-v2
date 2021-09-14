@@ -1,4 +1,5 @@
 import { Navbar } from "../components/navbar";
+import Link from 'next/link'
 
 const stuff = [
     {
@@ -56,8 +57,8 @@ const stuff = [
 const trails = [
     {
         name: 'Rainbow Falls',
-        location: 'Greenville, SC',
-        distance: 3.4
+        location: 'Cleveland, SC',
+        distance: 4.4
     },
     {
         name: 'Pilot Rock',
@@ -76,12 +77,13 @@ export default function About() {
                     <div className='header-underline h-2 w-10 rounded-lg bg-blue-500'></div>
                 </div>
                 <div className='about-content'>
-                    <p className='text-lg text-blue-600 md:w-1/2'>Hey! I'm a frontend dev from Charleston, SC that loves learning new
-                        software and technologies.</p>
+                    <p className='text-lg'>Hey! I'm a junior software dev from Charleston, SC that loves learning new
+                        software and technologies. I started teaching myself web development when I was in 4th grade (around 12 years ago), and have gotten into a ton of different things since then. I've been fortunate enough to work on everything from large-scale installations like St. Louis Aquarium to government websites.</p>
+                    <p className='text-lg'>I do a good deal of development outside of work, and you can check out some of what I'm up to on the <Link href='/projects'><span className='text-blue-500 cursor-pointer'>Projects page.</span></Link> When I'm not working on one of my pet projects, I spend a lot of time in the woods hiking, camping, and backpacking.</p>
                 </div>
                 <div className='about-more md:flex md:flex-col'>
                     <div className='software md:w-1/2'>
-                        <div className='header-container mb-3 mt-8 flex flex-col items-end font-bold md:items-start'>
+                        <div className='header-container mb-3 mt-8 flex flex-col items-start font-bold md:items-start'>
                             <h2 className='text-3xl'>software i use</h2>
                             <div className='header-underline h-1 w-6 rounded-lg bg-blue-500'></div>
                         </div>
@@ -112,7 +114,7 @@ export default function About() {
                         <ul className='flex flex-col items-end md:w-full md:flex-row md:flex-wrap'>
                             {trails.map(trail => {
                                 return (
-                                    <li className='flex justify-between w-full items-start flex-col mb-3 md:w-48 md:mr-3'>
+                                    <li className='flex justify-between w-full items-start flex-col mb-3 md:w-64 md:mr-3 border-2 border-gray-200 rounded-lg p-6'>
                                         <div className='trail-head flex items-center '>
                                             <h3 className='font-medium text-xl mr-1'>{trail.name}</h3>
                                             &middot;
