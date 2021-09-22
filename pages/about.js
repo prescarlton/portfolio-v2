@@ -8,6 +8,11 @@ const stuff = [
         level: 6
     },
     {
+        name: 'Jest',
+        uses: null,
+        level: 4
+    },
+    {
         name: 'Node.js',
         uses: 'Conference Room Tool',
         level: 5
@@ -64,6 +69,11 @@ const trails = [
         name: 'Pilot Rock',
         location: 'Brevard, NC',
         distance: 24.1
+    },
+    {
+        name: 'Ravencliff Falls',
+        location: 'Cleveland, SC',
+        distance: 4.5
     }
 ]
 
@@ -82,15 +92,15 @@ export default function About() {
                     <p className='text-lg'>I do a good deal of development outside of work, and you can check out some of what I'm up to on the <Link href='/projects'><span className='text-blue-500 cursor-pointer'>Projects page.</span></Link> When I'm not working on one of my pet projects, I spend a lot of time in the woods hiking, camping, and backpacking.</p>
                 </div>
                 <div className='about-more md:flex md:flex-col'>
-                    <div className='software md:w-1/2'>
+                    <div className='software'>
                         <div className='header-container mb-3 mt-8 flex flex-col items-start font-bold md:items-start'>
                             <h2 className='text-3xl'>software i use</h2>
                             <div className='header-underline h-1 w-6 rounded-lg bg-blue-500'></div>
                         </div>
-                        <ul className='flex flex-col items-end md:flex-wrap md:h-56'>
+                        <ul className='flex flex-col items-end md:flex-wrap md:max-w-max md:flex-row'>
                             {stuff.map(item => {
                                 return (
-                                    <li className='flex justify-between w-full items-center flex-row-reverse md:h-10 md:mr-4'>
+                                    <li className='flex justify-between w-full items-center flex-row-reverse md:h-10 md:pr-6 md:w-1/3'>
                                         <div className='bar-bg bg-gray-100 rounded-lg h-3 w-32'>
                                             <div className={`bar-color bg-blue-500 h-3 w-${item.level * 4} rounded-lg`}></div>
                                         </div>
