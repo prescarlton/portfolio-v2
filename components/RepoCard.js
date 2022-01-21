@@ -1,6 +1,6 @@
-import { GitHub } from "react-feather"
+import { GitHub, Link } from "react-feather"
 
-export const RepoCard = ({ name, description, updated_at, language, html_url }) => {
+export const RepoCard = ({ name, description, updated_at, language, html_url, homepage }) => {
 
     const updated_year = updated_at.slice(0, 4)
     return (
@@ -9,7 +9,10 @@ export const RepoCard = ({ name, description, updated_at, language, html_url }) 
             <h1 className='text-xl text-blue-500 m-1 w-64'>{name}</h1>
             <h2 className='hidden flex-1 md:block'>{description}</h2>
             <h2 className='hidden text-lg text-gray-400 m-1 md:block'>{language}</h2>
-            <a href={html_url} target="_blank"><GitHub className='text-gray-400 hover:text-blue-500 ml-2' /></a>
+            <div className="flex justify-evenly">
+                {homepage && <a href={homepage} target="_blank"><Link className='text-gray-400 hover:text-blue-500 ml-2' /></a>}
+                <a href={html_url} target="_blank"><GitHub className='text-gray-400 hover:text-blue-500 ml-2' /></a>
+            </div>
         </div>
     )
 }
